@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{99998912-FBEC-4F4D-B864-81EC47392FCF}|Default">
+  <MonoDevelop.Ide.ItemProperties.NewsFeed.Android PreferredExecutionTarget="Android.pixel_2_r_11_0_-_api_30" />
+  <MonoDevelop.Ide.Workbench ActiveDocument=".gitignore">
+    <Files>
+      <File FileName=".gitignore" Line="4" Column="6" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="NewsFeed" expanded="True">
+            <Node name="NewsFeed" expanded="True">
+              <Node name="Helpers" expanded="True">
+                <Node name="APIKeys.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.NewsFeed.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.5DC692B4-BC36-4542-9C49-CD15142C3F4E" />
+</Properties>

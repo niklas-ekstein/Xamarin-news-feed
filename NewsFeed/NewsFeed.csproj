@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.1" />
+    <PackageReference Include="Acr.UserDialogs" Version="7.2.0.562" />
+    <PackageReference Include="Microsoft.Azure.DocumentDB.Core" Version="2.17.0" />
+    <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Acr.UserDialogs" />
+    <None Remove="Microsoft.Azure.DocumentDB.Core" />
+    <None Remove="WindowsAzure.Storage" />
+    <None Remove="Xamarin.CommunityToolkit" />
+  </ItemGroup>
+</Project>

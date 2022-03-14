@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    x:Class="Feed.Core.RemovedPostPage"
+    Title="{Binding Title}"
+    ios:Page.UseSafeArea="true"
+    Visual="Material">
+    <ContentPage.Content>
+        <StackLayout>
+            <ActivityIndicator IsRunning="{Binding IsBusy}" />
+            <CollectionView ItemsSource="{Binding CompletedToDos}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10,0,10,5">
+                            <Frame HasShadow="True">
+                                <StackLayout>
+                                    <Label Text="{Binding Name, StringFormat='Task Name: {0}'}" FontSize="Medium" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Category, StringFormat='Category: {0}'}" FontSize="Medium" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Description}" FontSize="Small"/>
+
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                <CollectionView.EmptyViewTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label HorizontalOptions="Center" VerticalOptions="CenterAndExpand"
+                                    FontSize="Large"
+                                    TextColor="Black"
+                                    Text="There are no completed items" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.EmptyViewTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    x:Class="Feed.Core.AddPostPage"
+    xmlns:xct="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit"
+    Title="{Binding Title}"
+    ios:Page.UseSafeArea="True"
+    Visual="Material">
+
+        <ContentPage.Content>
+            
+
+            <Grid>
+                            <Grid.RowDefinitions>
+                                    <RowDefinition Height="80"/>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="100"/>
+                                    <RowDefinition Height="100"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+                                <RowDefinition Height="50"/>
+
+                            </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                <Editor Placeholder="Add text" BackgroundColor="White" Text="{Binding ToDoItem.PostId}" Grid.ColumnSpan="3" Margin="10" VerticalOptions="Start"/>
+
+                            <Button class="btn" Grid.Column="0" Grid.Row="1"
+                                    
+                                    Visual="Default"
+                                    Text="{Binding CurrentItem.MonkImage}"
+                                    Clicked="Button_Clicked"
+                                    BackgroundColor="CornflowerBlue"
+                                    TextColor="White"
+                                    Margin="0">
+                            <Button.ImageSource>
+                                <FontImageSource
+                                            FontFamily="FontAwesome5Solid"
+                                            Glyph="&#xf234;"
+                                            Size="16"
+                                            Color="White" />
+                            </Button.ImageSource>
+                            </Button>
+
+                <Button class="btn" Grid.Column="1" Grid.Row="1"
+                                    Visual="Default"
+                                    Text="Take photo"
+                                    Clicked="Button_Clicked"
+                                    BackgroundColor="CornflowerBlue"
+                                    TextColor="White"
+                                    Margin="0">
+                                                            
+                            <Button.ImageSource>
+                                <FontImageSource
+                                    
+                                            FontFamily="FontAwesome5Solid"
+                                            Glyph="&#xf234;"
+                                            Size="16"
+                                            Color="White" />
+                            </Button.ImageSource>
+
+                </Button>
+
+                            <Button class="btn" Grid.Column="2" Grid.Row="1"
+                                    Visual="Default"
+                                    Text="Add video"
+                                    Clicked="Button_Clicked_1"
+                                    BackgroundColor="CornflowerBlue"
+                                    TextColor="White"
+                                    Margin="0"
+                                                                >
+                            <Button.ImageSource>
+                                <FontImageSource 
+                                            FontFamily="FontAwesome5Solid"
+                                            Glyph="&#xf234;"
+                                            Size="16"
+                                            Color="White" />
+                            </Button.ImageSource>
+                            </Button>
+
+                <xct:MediaElement Source="https://eksteinazureblob.blob.core.windows.net/image/frank.mp4"
+                                  AutoPlay="True"
+                                  IsVisible="{Binding video}"
+                                  HeightRequest="200"
+                                  WidthRequest="300"
+                                  HorizontalOptions="Center" />
+
+
+                            <CarouselView ItemsSource="{Binding Monkeys}"
+                                          CurrentItem="{Binding CurrentItem}"
+                                         
+                                          Grid.Row="2" Grid.RowSpan="3"
+                                          Grid.Column="0" Grid.ColumnSpan="3"
+                                          HorizontalScrollBarVisibility="Never"
+                                          
+                                          IndicatorView="{x:Reference monkeysIndicator}" BackgroundColor="Gold">
+                                
+                                <CarouselView.ItemTemplate>
+                                    <DataTemplate>
+                                                    <Image Source="{Binding MonkImage}"
+
+                                                           Aspect="AspectFill"
+                                                           HeightRequest="150"
+                                                           WidthRequest="150"
+                                                           HorizontalOptions="End"
+                                                           VerticalOptions="CenterAndExpand"
+                                                           BackgroundColor="Blue"
+                                                           Grid.Row="2" Grid.RowSpan="2"
+                                                           />
+                                    </DataTemplate>
+                                </CarouselView.ItemTemplate>
+                            </CarouselView>
+
+                                  <IndicatorView x:Name="monkeysIndicator"
+                                 IndicatorColor="LightGray"
+                                 SelectedIndicatorColor="Gray"
+                                 IndicatorsShape="Square"
+                                 Margin="0,0,0,0"
+                                 VerticalOptions="Fill"
+                                 HorizontalOptions="Fill"
+                                 Grid.Row="5"
+                                 Grid.Column="1"
+                                 />
+
+                
+                            <Button class="btn"
+                                    Command="{Binding DeleteCommand}"
+                                    Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="6"
+                                    Visual="Default"
+                                    Text="delete"
+                                    Clicked="Button_Clicked_2"
+                                    BackgroundColor="CornflowerBlue"
+                                    TextColor="White"
+                                    Margin="0">
+                            <Button.ImageSource>
+                                <FontImageSource
+                                            FontFamily="FontAwesome5Solid"
+                                            Glyph="&#xf234;"
+                                            Size="16"
+                                            Color="White" />
+                            </Button.ImageSource>
+                            </Button>
+
+                        </Grid>
+
+    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" Command="{Binding SaveCommand}" x:Name="loading" Clicked="loading_Clicked"/>
+        <ToolbarItem Text="Cancel" Clicked="Handle_CancelClicked" />
+    </ContentPage.ToolbarItems>
+
+</ContentPage>
